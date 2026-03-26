@@ -1,0 +1,16 @@
+id: jwt-none-algorithm
+info:
+  name: JWT None Algorithm
+  author: project-c
+  severity: critical
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/api/auth/token"
+    body: '{"username":"admin","password":"admin123"}'
+    headers:
+      Content-Type: application/json
+    matchers:
+      - type: word
+        words:
+          - "token"

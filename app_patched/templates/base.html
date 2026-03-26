@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Patched Web Application</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Secure version - all vulnerabilities patched -->
+    <!-- CSRF protection enabled -->
+    <!-- Input validation and sanitization enabled -->
+    <header class="site-header">
+        <h1>Patched Web Application</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/comments">Comments</a>
+            <a href="/upload">Upload</a>
+        </nav>
+    </header>
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Panel</h2>
+<form method="POST" action="/api/admin/comments">
+    <label>Add comment</label>
+    <textarea name="text"></textarea>
+    <button type="submit">Post</button>
+</form>
+<div class="comment-list">
+    {% for comment in comments %}
+        <div class="comment">{{ comment.text | safe }}</div>
+    {% endfor %}
+</div>
+{% endblock %}

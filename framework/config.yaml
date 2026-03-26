@@ -1,0 +1,4 @@
+target: http://localhost:5000
+output_dir: framework/output
+requests_timeout: 10
+user_agent: ProjectC-Scanner/1.0

@@ -1,0 +1,1 @@
+"""Patched application package."""

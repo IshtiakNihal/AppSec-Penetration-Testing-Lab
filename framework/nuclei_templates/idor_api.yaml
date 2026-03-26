@@ -1,0 +1,13 @@
+id: idor-api
+info:
+  name: IDOR API Access
+  author: project-c
+  severity: medium
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/user/1/statements"
+    matchers:
+      - type: status
+        status:
+          - 200

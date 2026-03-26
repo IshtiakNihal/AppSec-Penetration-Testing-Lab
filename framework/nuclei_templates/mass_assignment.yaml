@@ -1,0 +1,16 @@
+id: mass-assignment
+info:
+  name: Mass Assignment
+  author: project-c
+  severity: medium
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/user/profile"
+    headers:
+      Content-Type: application/json
+    body: '{"role":"admin"}'
+    matchers:
+      - type: status
+        status:
+          - 200

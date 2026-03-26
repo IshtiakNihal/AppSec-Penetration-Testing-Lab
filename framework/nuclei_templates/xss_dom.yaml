@@ -1,0 +1,13 @@
+id: xss-dom
+info:
+  name: DOM XSS
+  author: project-c
+  severity: high
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/settings?color=%22%3E%3Csvg%20onload%3Dalert(1)%3E"
+    matchers:
+      - type: status
+        status:
+          - 200

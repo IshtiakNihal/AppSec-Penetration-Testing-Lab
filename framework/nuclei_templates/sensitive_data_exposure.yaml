@@ -1,0 +1,14 @@
+id: sensitive-data-exposure
+info:
+  name: Sensitive Data Exposure
+  author: project-c
+  severity: high
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/users"
+    matchers:
+      - type: word
+        words:
+          - "api_key"
+          - "password"

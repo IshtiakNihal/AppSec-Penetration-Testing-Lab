@@ -1,0 +1,16 @@
+id: broken-rate-limit
+info:
+  name: Broken Rate Limiting
+  author: project-c
+  severity: medium
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/api/login"
+    headers:
+      Content-Type: application/json
+    body: '{"username":"admin","password":"wrong"}'
+    matchers:
+      - type: status
+        status:
+          - 401

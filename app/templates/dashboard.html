@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+{% if user %}
+<p>Welcome, {{ user.username }}!</p>
+<p>Account Balance: ${{ user.account_balance }}</p>
+{% else %}
+<p>Please login.</p>
+{% endif %}
+{% endblock %}

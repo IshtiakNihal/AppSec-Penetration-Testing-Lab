@@ -1,0 +1,16 @@
+id: sql-injection-error
+info:
+  name: SQL Injection Error Based
+  author: project-c
+  severity: high
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/api/search"
+    body: '{"q":"''"}'
+    headers:
+      Content-Type: application/json
+    matchers:
+      - type: word
+        words:
+          - "error"

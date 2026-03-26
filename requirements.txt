@@ -1,0 +1,39 @@
+# Project C: AppSec & Penetration Testing Lab
+## requirements.txt - Python Dependencies
+
+# Web Framework
+flask>=3.0.0
+flask-sqlalchemy>=3.1.0
+werkzeug>=3.0.0
+flask-wtf>=1.2.0
+
+# Database
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+
+# Security & Cryptography
+pyjwt>=2.8.0
+cryptography>=41.0.0
+
+# HTTP & Network
+requests>=2.31.0
+urllib3>=2.0.0
+
+# XML Processing (for XXE testing)
+lxml>=4.9.0
+
+# Reporting
+jinja2>=3.1.0
+reportlab>=4.0.0
+
+# Config and parsing
+pyyaml>=6.0.0
+
+# Testing & Exploitation
+pytest>=7.4.0
+threading-utils>=0.2.0
+
+# Development
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0

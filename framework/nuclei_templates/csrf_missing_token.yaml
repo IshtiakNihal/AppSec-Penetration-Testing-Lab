@@ -1,0 +1,16 @@
+id: csrf-missing-token
+info:
+  name: CSRF Missing Token
+  author: project-c
+  severity: medium
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/transfer"
+    body: "recipient=attacker@evil.com&amount=100"
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    matchers:
+      - type: status
+        status:
+          - 200

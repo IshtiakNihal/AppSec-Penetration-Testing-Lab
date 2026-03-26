@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# Database
+*.db
+instance/
+
+# Uploads (user-generated)
+uploads/*
+!uploads/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Framework output (generated at runtime)
+framework/output/*.json
+framework/output/*.pdf
+framework/output/*.html
+
+# Docker
+*.log
+
+# Byte-compiled
+*.pyc

@@ -1,0 +1,7 @@
+rules:
+  - id: flask-sqli-string-concat
+    patterns:
+      - pattern: "db.session.execute(text($QUERY))"
+    message: "Raw SQL execution detected; use parameterized queries."
+    languages: [python]
+    severity: WARNING
