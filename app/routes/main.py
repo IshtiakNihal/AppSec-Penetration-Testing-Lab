@@ -46,15 +46,6 @@ def comments():
     return render_template("comments.html", comments=all_comments)
 
 
-@main_bp.route("/user/<int:user_id>")
-def user_detail(user_id):
-    """IDOR vulnerability - no authentication check"""
-    user = User.query.get(user_id)
-    if not user:
-        return "User not found", 404
-    return render_template("user_profile.html", user=user)
-
-
 @main_bp.route("/user/profile", methods=["GET", "POST"])
 def user_profile():
     if request.method == "POST":
